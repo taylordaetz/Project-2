@@ -18,7 +18,7 @@ This bar chart illustrates Nominal GDP (current US dollars) in the United States
 
 ### **US and China GDP**
 
-![GDP in the US vs. China from 1960 to 2021](GDP US vs China.png)
+![GDP in the US vs. China from 1960 to 2021](GDP_US_CH.png)
 
 Here, we have a line plot of Nominal GDP in the US and China from 1960 to 2021. Both data sets are measured in current US dollars, so they are comparable values. From this plot, we can observe that while China's nominal GDP is less than the US's nominal GDP, China's nominal GDP appears to be growing faster. This observation matches the hypothesis of many economists that China's economy could surpass that of the US. However, a more accurate indicator of the health of the US's and China's economy would be per capita income, or Real GDP per person. That comparison will be for another day. 
 
