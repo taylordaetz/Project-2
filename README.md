@@ -2,8 +2,7 @@
 
 For Project 2 - Visualizing Interesting Datasets - I looked at Nominal Gross Domestic Product (GDP) in the US and China from 1960 to 2021. Nominal GDP is the value of economic output in current prices - hence the data is measured by current US dollars. I first focused on GDP in the US over the 62 year time period, then compared the GDP of US and China together. 
 
-This was completed for my CS40 - Computing for the Web - course. Project instructions found [here]
-(https://github.com/mikeizbicki/cmc-csci040/tree/2022fall/project_02)
+This was completed for my CS40 - Computing for the Web - course. Project instructions found [here](https://github.com/mikeizbicki/cmc-csci040/tree/2022fall/project_02)
 
 ## GDP Data
 
