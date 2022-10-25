@@ -1,77 +1,74 @@
 import json
 import csv
+from turtle import color, width
 
 #US GDP
 with open('NY.GDP.MKTP.json') as json_data:
     gdp_data= json.load(json_data)
-    #print(gdp_data)
-    print(type(gdp_data))
-    print(type(gdp_data[1]))
-    print(json.dumps(gdp_data[1], indent =2))
     gdp_data = gdp_data[1]
-    #print(gdp_data)
 dates = []
 values = []
+
+#creating a list of dates and a list of values
 for i in gdp_data:
     dates.append(i['date'])
     values.append(i['value'])
-print(dates)
-#print(type(dates[1]))
-#print(type(values[1]))
-print(values)
+int_values_us = []
+#same format as data for CH GDP
+for x in values:
+    int_values_us.append(float(x))
 
 #CH GDP
 with open('API_CHN_DS2_en_csv_v2_4670670.csv') as file:
     reader = csv.reader(file)
-    #print(type(reader))
     data_ch = list(reader)
-    print(type(data_ch))
 
+#creating list of dates and a list of values from specific row of CSV file
 values_ch = data_ch[453][4:66]
-values_ch = [int(i) for i in values_ch]
-#values_ch = list(map(int,values_ch)) 
-#values_ch = [int(i) for i in values_ch]
-print(values_ch)
+int_values_ch =[]
+for  x in values_ch:
+    int_values_ch.append(float(x))
 dates_ch = data_ch[4][4:66]
-print(dates_ch)
 
 #GRAPHING
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker 
+from matplotlib.ticker import FuncFormatter
+from matplotlib.ticker import(AutoMinorLocator, MultipleLocator)
 import numpy as np
 
-dates=dates[::-1]
-values=values[::-1]
+#format as trillions
+#lists of data set -- from low (1960) to high (2021)
+year=dates[::-1]
+int_values_us=int_values_us[::-1]
 
-plt.title('US GDP (Current US $) per Year')
-plt.figure(1)
-plt.ylabel('US GDP (Current US $)')
+
+# US GDP from 1960 to 2021
+#fig, ax = plt.subplots()
+plt.bar(year,int_values_us,color ='blue', width=0.5)
+plt.title('US GDP from 1960 to 2021')
+plt.ylabel('US GDP (Current US $, in trillions)')
 plt.xlabel('Year')
-plt.xaxis
-plt.bar(dates,values, linewidth=1.0)
-fig, ax = plt.subplots()
+plt.xticks(rotation=50,fontsize =5, color='black')
+#ax.xaxis.set_tick_params(labelrotation = -50, labelsize = 5, labelcolor = 'black', pad =2, width =0.25)
+plt.yticks(fontsize = 7)
+plt.yticks(np.arange(min(int_values_us),max(int_values_us)+1,1e12))
+#plt.yaxis.set_minor_locator(AutoMinorLocator())
+#ax.yaxis.set_tick_params(labelsize = 7)
 plt.show()
 
 
-dates_ch=dates_ch[::-1]
-values_ch=values_ch[::-1]
-plt.figure(2)
-fig, ax = plt.subplots()
-ax.bar(dates_ch, values_ch) 
+# US and CH GDP from 1960 to 2021
+int_values_ch = int_values_ch
+fig, ax =plt.subplots()
+ax.plot(year, int_values_us, color = 'blue', label = 'US GDP')
+ax.plot(year, int_values_ch, color = 'red', label = 'China GDP')
+ax.xaxis.set_tick_params(labelrotation = 50, labelsize = 4, labelcolor = 'black', pad =2)
+#ax.yaxis.set_minor_locator(AutoMinorLocator())
+ax.yaxis.set_tick_params(labelsize = 7)
+plt.title('GDP in the US vs. China from 1960 to 2021')
+ax.set_xlabel('Year')
+ax.set_ylabel('GDP (Current US$, in trillions)')
+plt.yticks(np.arange(min(int_values_ch),max(int_values_us)+1,step=1e12))
+plt.legend(bbox_to_anchor=(1,1), loc='upper left', borderaxespad=0)
 plt.show()
-
-
-
-
-#dictionary =dict(zip(dates,values))
-#print(dictionary)
-
-#accumulator for dates and value - create outside of the for loop
-#for i in list:
-# every item append i[dates] to dates 
-#i['date']
-
-#for loop to iterate through:
-#   dates.append(i[date])
-#   values.append(i[value])
-#    accumulator.append(lab_dict[term])
-#create a dictionary from two lists
