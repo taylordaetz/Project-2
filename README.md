@@ -1,4 +1,4 @@
-# Real GDP in the US and China
+# GDP in the US and China
 
 For Project 2 - Visualizing Interesting Datasets - I looked at Nominal Gross Domestic Product (GDP) in the US and China from 1960 to 2021. Nominal GDP is the value of economic output in current prices - hence the data is measured by current US dollars. I first focused on GDP in the US over the 62 year time period, then compared the GDP of US and China together. 
 
@@ -8,7 +8,7 @@ This was completed for my CS40 - Computing for the Web - course. Project instruc
 
 The graphs displayed below use data from **The World Bank**. 
 
-### **US Nominal GDP**
+### **US Nominal GDP from 1960 to 2021**
 
 ![US GDP from 1960 to 2021](GDP_US.png)
 
@@ -16,7 +16,7 @@ This bar chart illustrates Nominal GDP (current US dollars) in the United States
 
 *This data was found through [this Github](https://github.com/jdorfman/awesome-json-datasets#gdp). Specifically, from the json file of GDP in the US found through [The World Bank](http://api.worldbank.org/v2/countries/USA/indicators/NY.GDP.MKTP.CD?per_page=5000&format=json)*
 
-### **US and China GDP**
+### **GDP in the US vs. China from 1960 to 2021**
 
 ![GDP in the US vs. China from 1960 to 2021](GDP_US_CH.png)
 
